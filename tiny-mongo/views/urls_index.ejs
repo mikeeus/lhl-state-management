@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_head %>
+</head>
+<body>
+
+  <% include ./partials/_header %>
+
+  <div class="page-container">
+    <% include partials/_notifications %>
+
+    <div class="urls-actions">
+      <a href="/urls/new" class="button">New link</a>
+    </div>
+
+    <div class="urls">
+      <% for (let index in urls) { %>
+        <div class="url">
+            <div class="short-url">
+            <a href="http://localhost:8080/u/<%= urls[index].shortURL %>">http://localhost:8080/u/<%= urls[index].shortURL %></a>
+          </div>
+
+          <div class="long-url">
+            <a href="<%= urls[index].url %>">(<%= urls[index].url %>)</a>
+          </div>
+
+          <div class="actions">
+            <form method="GET" action="/urls/<%= urls[index].shortURL %>">
+              <input class="submit" type="submit" value="Edit">
+            </form>
+
+            <form method="POST" action="/urls/<%= urls[index].shortURL %>?_method=DELETE">
+              <input class="submit" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

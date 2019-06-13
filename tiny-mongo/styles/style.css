@@ -1,0 +1,115 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+
+  font-family: 'Scope One', serif;
+  color: #2f2f2f;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #71aef2;
+}
+
+a, a:focus, a:visited, a:active {
+  color: #2f2f2f;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Proza Libre', Roboto, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  font-size: 2rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: 1px solid grey;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.auth-form .form-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.auth-form .form-control label {
+  width: 13rem;
+}
+
+.auth-form .form-control input {
+  width: 20rem;
+}
+
+button, .button, input[type=submit] {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: #71aef2;
+  color: white;
+  border: 0;
+}
+
+a.button {
+  color: white !important;
+}
+
+button:hover, .button:hover, input[type=submit]:hover {
+  background: #6194ce;
+}
+
+.urls-actions {
+  margin-bottom: 2rem;
+}
+
+.url {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.url .long-url {
+  font-weight: bold;
+}
+
+.url .actions {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.url .actions form {
+  margin-left: 1rem;
+}
+
+.url-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.url-form label,
+.url-form input {
+  margin-bottom: 1rem;
+}

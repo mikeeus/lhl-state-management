@@ -1,0 +1,19 @@
+<header>
+  <a class="logo" href="/">TinyApp</a>
+
+  <div class="auth">
+    <%  if (locals.user) { %>
+      <form action="/logout" method="POST">
+        <%= user.email %>
+        <input class="submit" type="submit" value="Sign Out">
+      </form>
+    <%  } else { %>
+      <form action="/login" method="GET">
+        <input class="submit" type="submit" value="Sign In">
+      </form>
+      <form action="/register" method="GET">
+        <input class="submit" type="submit" value="Register">
+      </form>
+    <%  } %>
+  </div>
+</header>

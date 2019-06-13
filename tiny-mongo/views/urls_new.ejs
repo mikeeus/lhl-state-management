@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_head %>
+</head>
+<body>
+  <% include partials/_header %>
+
+  <div class="page-container">
+    <% include partials/_notifications %>
+
+    <form class="new-url" action="/urls" method="POST">
+      <label for="longURL">Enter a URL</label>
+
+      <input id="longURL" type="text" name="longURL" placeholder="http://">
+      <input class="submit" type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

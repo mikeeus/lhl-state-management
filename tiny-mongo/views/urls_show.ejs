@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_head %>
+</head>
+<body>
+
+  <% include ./partials/_header %>
+
+  <div class="page-container">
+    <% include partials/_notifications %>
+
+    <p>
+      <b>Short URL</b>
+      </br>
+      <a href="http://localhost:8080/u/<%= url.shortURL %>">http://localhost:8080/u/<%= url.shortURL %></a>
+    </p>
+
+    <p>Edit Url</p>
+    <form class="url-form" action="/urls/<%= url.shortURL %>?_method=PUT" method="POST">
+      <input id="longURL" type="text" name="longURL" value="<%= url.url %>">
+      <input class="submit" type="submit" value="Update">
+    </form>
+  </div>
+</body>
+</html>

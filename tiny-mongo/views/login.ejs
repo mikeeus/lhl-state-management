@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_head %>
+</head>
+<body>
+  <div class="page-container">
+    <h2 class="text-center">SIGN IN</h2>
+
+    <% include partials/_notifications %>
+
+    <form class="auth-form" action="/login" method="POST">
+      <div class="form-control">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="email">
+      </div>
+
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+      </div>
+
+      <input class="submit" type="submit" value="Login">
+    </form>
+
+    <p>Don't have an account? <a href="/register">Register</a></p>
+  </div>
+</body>
+</html>

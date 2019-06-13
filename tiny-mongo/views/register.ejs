@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_head %>
+</head>
+<body>
+  <% include partials/_banner %>
+
+  <div class="page-container">
+    <h2 class="text-center">REGISTER</h2>
+
+    <% include partials/_notifications %>
+
+    <form class="auth-form" action="/register" method="POST">
+      <div class="form-control">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="email">
+      </div>
+
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+      </div>
+
+      <input class="submit" type="submit" value="Register">
+    </form>
+
+    <p>Already have an account? <a href="/login">Sign In</a></p>
+  </div>
+</body>
+</html>

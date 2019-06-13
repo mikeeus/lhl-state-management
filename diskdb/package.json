@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "diskdb": "^0.1.17"
+  }
+}
