@@ -301,4 +301,52 @@ tentbnb  0.000GB
 tiny     0.000GB
 ```
 
-Now you're all set! You can go into the tiny app folder and run the server to create and edit tiny urls which will be stored in your local MongoDB instance. Cool.
+To use mongodb in your npm projects you need to use an npm library like [mongodb](https://github.com/mongodb/node-mongodb-native) or [mongoose](https://github.com/Automattic/mongoose).
+
+Now you can connect to the database by passing the `MongoClient`'s connect method a url pointing to your MongoDB instance.
+
+```javascript
+const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
+
+const url = 'mongodb://localhost/tiny';
+let db;
+
+MongoClient.connect(url, function(err, database) {
+  if (err) {
+    console.error(err);
+    database.close();
+    return;
+  }
+
+  db = database.db('tiny');
+  app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}.`);
+  });
+});
+```
+
+Since we save the `database.db('tiny')` connection to a local variable `db` we can use it in our route handlers like this:
+
+```javascript
+
+// urls list page
+app.get("/urls", (req, res) => {
+  db.collection('urls').find({ userID: res.locals.user._id })
+  .toArray((err, urls) => {
+    if (err) {
+      return res.status(500).send("Server error! Please try again.");
+    }
+
+    res.render("urls_index", { urls, user: res.locals.user });
+  });
+});
+```
+
+## Go Forth and Develop
+
+Now you're all set!
+
+You can go into the tiny app folder and run the server to create and edit tiny urls which will be stored in your local MongoDB instance.
+
+Cool.
